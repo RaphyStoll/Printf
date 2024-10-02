@@ -6,13 +6,11 @@
 /*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 21:19:51 by raphaelferr       #+#    #+#             */
-/*   Updated: 2024/09/26 19:17:22 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2024/10/02 09:34:04 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-
 
 /*fonction principale*/
 int ft_printf(const char *format, ...)

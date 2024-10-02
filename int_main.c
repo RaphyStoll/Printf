@@ -1,17 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   int_main.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/02 09:34:09 by raphaelferr       #+#    #+#             */
+/*   Updated: 2024/10/02 09:56:00 by raphaelferr      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int main()
 {
 	char a = 'a';
 	char *b = "Hello World!";
 	int c = 42;
 	unsigned int d = 4294967268;
-	int e = 255;
+	int e = 24;
 	int *f = 0;
 	
 	//? pas implementer
-	printf("sans flag - : %5d\n", c);
-	printf("avec flag - : %-5d\n", c);
+	printf("sans flag champ de 5 - : %5d\n", c);
+	printf("avec flag champ de 5 - : %-5d\n", c);
 	puts("\n");
 	
 	//? merci gpt
@@ -33,5 +45,6 @@ int main()
 	printf("printf Pointeur : %p\n",f);
     ft_printf("ft_printf Pointeur : %p\n", f);
     ft_printf("Pourcentage : %%\n");
+
     return 0;
 }

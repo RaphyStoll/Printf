@@ -15,4 +15,3 @@ void ft_print_char(char c);
 int ft_printf(const char *format, ...);
 void ft_parse_format(const char *format, va_list args);
 int ft_handle_specifier(const char *format, va_list args);
-int main();
