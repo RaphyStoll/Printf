@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   int_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:34:09 by raphaelferr       #+#    #+#             */
-/*   Updated: 2024/10/02 09:56:00 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2024/10/04 14:52:20 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ int main()
 	int e = 24;
 	int *f = 0;
 	
+	//? promotion 
+
 	//? pas implementer
-	printf("sans flag champ de 5 - : %5d\n", c);
-	printf("avec flag champ de 5 - : %-5d\n", c);
+	//printf("sans flag champ de 5 - : %5d\n", c);
+	//printf("avec flag champ de 5 - : %-5d\n", c);
+
+	printf("char en int : %c", 0);
+	ft_printf("char en int : %c", 0);
 	puts("\n");
 	
 	//? merci gpt
