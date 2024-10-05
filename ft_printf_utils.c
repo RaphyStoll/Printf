@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
+/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 09:33:16 by raphaelferr       #+#    #+#             */
-/*   Updated: 2024/10/04 14:59:54 by raphalme         ###   ########.fr       */
+/*   Created: 2024/10/04 16:27:13 by raphaelferr       #+#    #+#             */
+/*   Updated: 2024/10/04 16:28:02 by raphaelferr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putchar(char c)
 {
-    write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
-void ft_putstr(char *str)
+
+int	ft_putstr(char *str)
 {
-    while (*str)
-    {
-        ft_putchar(*str);
-        str++;
-    }
+	int	count;
+
+	count = 0;
+	if (!str)
+	{
+		count += write(1, "(null)", 6);
+		return (count);
+	}
+	while (*str)
+	{
+		count += ft_putchar(*str);
+		str++;
+	}
+	return (count);
 }
