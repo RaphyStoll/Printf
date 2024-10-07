@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_select1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: raphaelferreira <raphaelferreira@studen    +#+  +:+       +#+        */
+/*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 16:18:14 by raphaelferr       #+#    #+#             */
-/*   Updated: 2024/10/04 16:26:02 by raphaelferr      ###   ########.fr       */
+/*   Updated: 2024/10/07 09:32:23 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
