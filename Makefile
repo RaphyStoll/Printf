@@ -7,10 +7,7 @@ MKDIR = mkdir -p
 
 OBJDIR = objects
 
-FILES = ft_printf_select1 \
-		ft_printf_select2 \
-		ft_printf_utils \
-		ft_printf
+FILES = 
 
 SRCS = $(addsuffix .c, $(FILES))
 OBJS = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
