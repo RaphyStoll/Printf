@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.c                                           :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: raphalme <raphalme@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/29 19:41:00 by raphaelferr       #+#    #+#             */
-/*   Updated: 2025/12/29 20:36:44 by raphalme         ###   ########.fr       */
+/*   Created: 2025/12/29 20:34:41 by raphalme          #+#    #+#             */
+/*   Updated: 2025/12/29 21:55:02 by raphalme         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../../includes/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+/*
+** Cette fonction sert a reinitialiser les flags avant de parser un nouveau %.
+** On ne touche PAS a tab->args ni a tab->tl ici.
+*/
+t_print	*initialise_tab(t_print *tab)
 {
-	t_print	tab;
-	int		i;
-
-	initialise_tab(&tab);
-	va_start(tab.args, format);
-	tab.tl = 0;
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] == '%')
-			i = eval_format(&tab, format, i + 1);
-		else
-			tab.tl += write(1, &format[i], 1);
-		i++;
-	}
-	va_end(tab.args);
-	return (tab.tl);
+    tab->wdt = 0;
+    tab->prc = 0;
+    tab->zero = 0;
+    tab->pnt = 0;
+    tab->dash = 0;
+    tab->sign = 0;
+    tab->zero = 0;
+    tab->sp = 0;
+    tab->hash = 0;
+    return (tab);
 }

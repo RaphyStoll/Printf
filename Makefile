@@ -6,27 +6,42 @@ RM = rm -f
 MKDIR = mkdir -p
 
 OBJDIR = objects
+SRCDIR = src
 
-FILES = 
+FILES = printf.c \
+		00_init/init.c \
+		01_parsing/parsing.c \
+		02_process/print_chars.c \
+		02_process/print_nbrs.c \
+		02_process/print_hex.c
 
-SRCS = $(addsuffix .c, $(FILES))
-OBJS = $(addprefix $(OBJDIR)/, $(addsuffix .o, $(FILES)))
+SRCS = $(addprefix $(SRCDIR)/, $(FILES))
+OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))
 
-$(OBJDIR)/%.o: %.c
-	$(MKDIR) $(OBJDIR)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS)
-	$(AR) $@ $^
+LIBFT_DIR = libs/libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
 all: $(NAME)
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+$(NAME): $(LIBFT) $(OBJS)
+	cp $(LIBFT) $(NAME)
+	$(AR) $(NAME) $(OBJS)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@$(MKDIR) $(dir $@)
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
 	$(RM) $(OBJS)
 	$(RM) -r $(OBJDIR)
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	$(RM) $(NAME)
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

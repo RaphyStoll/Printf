@@ -4,24 +4,19 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "type.h"
+# include "types.h"
+# include "types_trash.h"
+# include "../libs/libft/includes/libft.h"
 
-/*
-** Prototype principal
-*/
 int		ft_printf(const char *format, ...);
-
-/*
-** Init & Parsing
-*/
-t_print	*ft_initialise_tab(t_print *tab);
-int		ft_eval_format(t_print *tab, const char *format, int pos);
-
-/*
-** Utils (A remplacer par ta Libft si tu l'as)
-*/
-int		ft_strlen(const char *s);
-int		ft_isdigit(int c);
-void	ft_putchar(char c);
+t_print	*initialise_tab(t_print *tab);
+int		eval_format(t_print *tab, const char *format, int pos);
+void	print_char(t_print *tab);
+void	print_str(t_print *tab);
+void	print_ptr(t_print *tab);
+void	print_nbr(t_print *tab);
+void	print_unsigned(t_print *tab);
+void	print_hex(t_print *tab, const char type);
+void	print_percent(t_print *tab);
 
 #endif
